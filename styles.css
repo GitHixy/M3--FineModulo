@@ -1,3 +1,33 @@
 .nav__right__side .nav-link{
     color: white;
 }
+.social__icons, footer li, footer .btn{
+    cursor: pointer;
+}
+.social__icons ion-icon{
+    margin-right: 5px;
+    font-size: 30px;
+    color: #818181;
+}
+.social__icons ion-icon:hover {
+    color: #ffffff;
+}
+footer li {
+    color: #818181;
+    margin-block: 15px;
+}
+footer li:hover {
+    color: #ffffff;
+}
+footer .btn {
+    border: 1px solid #818181;
+    text-decoration: none;
+    color: #818181;
+}
+footer .btn:hover {
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+.trademark__text {
+    font-size: 10px;
+}
