@@ -31,3 +31,12 @@ footer .btn:hover {
 .trademark__text {
     font-size: 10px;
 }
+.jumbotron {
+    color: #ffffff;
+}
+.jumbotron-btn {
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+  }
+ 
