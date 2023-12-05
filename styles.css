@@ -16,6 +16,9 @@ footer li {
     color: #818181;
     margin-block: 15px;
 }
+footer {
+    
+}
 footer li:hover {
     color: #ffffff;
 }
