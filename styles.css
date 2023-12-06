@@ -34,7 +34,7 @@ footer .btn:hover {
 .trademark__text {
     font-size: 10px;
 }
-.jumbotron {
+.jumbotron, h3 {
     color: #ffffff;
 }
 .jumbotron-btn {
@@ -44,4 +44,10 @@ footer .btn:hover {
   }
 .btn__edit {
     border: 1px solid #ffffff;
+}
+.carousel-control-prev, .carousel-control-next {
+    width: 20px;
+}
+.carousel-control-prev {
+    display: none;
 }
