@@ -146,6 +146,7 @@ const movies = [
 ];
 
 
+
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -153,39 +154,40 @@ function shuffleArray(array) {
   }
 }
 
-
-shuffleArray(movies);
-
 function populateCarousel(carouselId, movies) {
   const carouselInner = document.querySelector(`#${carouselId} .carousel-inner`);
 
-  
   for (let i = 0; i < movies.length; i += 6) {
     const activeClass = i === 0 ? 'active' : '';
 
     const carouselItem = document.createElement('div');
     carouselItem.className = `carousel-item ${activeClass}`;
 
-   
     const row = document.createElement('div');
     row.className = 'row';
 
-    
     for (let j = i; j < i + 6 && j < movies.length; j++) {
       const col = document.createElement('div');
       col.className = 'col-md-2';
+
+      const imgContainer = document.createElement('div');
+      imgContainer.className = 'img-container';
 
       const img = document.createElement('img');
       img.src = movies[j].image;
       img.alt = movies[j].title;
       img.className = 'd-block w-100';
+
+      
+      const card = createMovieCard(movies[j]);
   
-      img.addEventListener('mouseover', () => showMovieTooltip(movies[j], img));
-      img.addEventListener('mouseout', () => tooltip.hide());
 
-
-      col.appendChild(img);
+      imgContainer.appendChild(img);
+      
+      col.appendChild(imgContainer);
+      col.appendChild(card);
       row.appendChild(col);
+      
     }
 
     carouselItem.appendChild(row);
@@ -195,7 +197,7 @@ function populateCarousel(carouselId, movies) {
 
 function createMovieCard(movie) {
   const card = document.createElement('div');
-  card.className = 'card';
+  card.className = 'card ';
 
   const cardBody = document.createElement('div');
   cardBody.className = 'card-body';
@@ -205,7 +207,7 @@ function createMovieCard(movie) {
   cardTitle.textContent = movie.title;
 
   const cardSubtitle = document.createElement('h6');
-  cardSubtitle.className = 'card-subtitle mb-2 text-muted';
+  cardSubtitle.className = 'card-subtitle mb-2 ';
   cardSubtitle.textContent = `${movie.year} | ${movie.duration} mins`;
 
   const cardText = document.createElement('p');
@@ -222,36 +224,18 @@ function createMovieCard(movie) {
   cardBody.appendChild(cardGenre);
 
   card.appendChild(cardBody);
-
-  return card.outerHTML;
-}
-
-function showMovieTooltip(movie, target) {
-  const tooltip = new bootstrap.Tooltip(target, {
-    title: createMovieCard(movie),
-    placement: 'top',
-    html: true
-  });
-
-  tooltip.show();
+  
+  return card;
 }
 
 
-populateCarousel('carousel1', movies.slice(0, 18)); 
 
 
 shuffleArray(movies);
-populateCarousel('carousel2', movies.slice(0, 18)); 
-
+populateCarousel('carousel1', movies.slice(0, 18));
 
 shuffleArray(movies);
-populateCarousel('carousel3', movies.slice(0, 18)); 
+populateCarousel('carousel2', movies.slice(0, 18));
 
-
-$(document).ready(function () {
-  $('[data-toggle="tooltip"]').tooltip({
-    html: true,
-    trigger: 'hover',
-    placement: 'top'
-  });
-});
+shuffleArray(movies);
+populateCarousel('carousel3', movies.slice(0, 18));
