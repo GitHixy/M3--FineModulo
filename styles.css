@@ -1,84 +1,122 @@
-.nav__right__side .nav-link{
-    color: white;
+.nav__right__side .nav-link {
+  color: white;
 }
-.social__icons, footer li, footer .btn{
-    cursor: pointer;
+.social__icons,
+footer li,
+footer .btn {
+  cursor: pointer;
 }
-.social__icons ion-icon{
-    margin-right: 5px;
-    font-size: 30px;
-    color: #818181;
+.social__icons ion-icon {
+  margin-right: 5px;
+  font-size: 30px;
+  color: #818181;
 }
 .social__icons ion-icon:hover {
-    color: #ffffff;
+  color: #ffffff;
 }
 footer li {
-    color: #818181;
-    margin-block: 15px;
+  color: #818181;
+  margin-block: 15px;
 }
 footer {
-    
 }
 footer li:hover {
-    color: #ffffff;
+  color: #ffffff;
 }
 footer .btn {
-    border: 1px solid #818181;
-    text-decoration: none;
-    color: #818181;
+  border: 1px solid #818181;
+  text-decoration: none;
+  color: #818181;
 }
 footer .btn:hover {
-    border: 1px solid #ffffff;
-    color: #ffffff;
+  border: 1px solid #ffffff;
+  color: #ffffff;
 }
 .trademark__text {
-    font-size: 10px;
+  font-size: 10px;
 }
-.jumbotron, h3 {
-    color: #ffffff;
+.jumbotron,
+h3 {
+  color: #ffffff;
 }
 .jumbotron-btn {
-    background-color: #000000;
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+.btn__div {
+    display: flex;
+    justify-content: end;
+}
+.btn__edit1, .btn__edit2 {
+    font-size: 20px;
     color: #ffffff;
     border: 1px solid #ffffff;
-  }
-.btn__edit {
-    border: 1px solid #ffffff;
+    background-color: #212529;
 }
 .carousel-inner {
-    overflow: visible;
+  overflow: visible;
 }
-.carousel-control-prev, .carousel-control-next {
-    width: 20px;
+.carousel-control-prev,
+.carousel-control-next {
+  width: 20px;
 }
 .carousel-control-prev {
-    display: none;
+  display: none;
 }
-.img-container {
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.5s;
+.card-cont {
+  position: relative;
+  transition: transform 0.5s;
 }
 .card {
-    background-color: #000000;
-    color: #ffffff;
-    transition: transform 0.5s, opacity 0.5s, height 0.5s ease-in-out; 
-    opacity: 0; 
-    height: 0;
-    position: absolute;
-    top: 100%;
-    box-sizing: border-box;
-    
-   
+  background-color: #000000;
+  color: #ffffff;
+  transition: transform 0.5s, opacity 0.5s, height 0.5s ease-in-out;
+  opacity: 0;
+  height: 0;
+  position: absolute;
+  top: 100%;
+  box-sizing: border-box;
+  z-index: 0;
 }
-.img-container:hover {
+.img-cont {
+  transition: transform 0.5s;
+}
+.card-cont:hover .card {
+  opacity: 1;
+  height: auto;
+  width: 100%;
+  transform: scale(1.05);
+  z-index: 1;
+}
+.card-cont:hover .img-cont {
   transform: scale(1.05);
 }
-.img-container:hover + .card, .card:hover {
-    opacity: 1; 
-    height: auto;
-   width: inherit;
-   z-index: 1;
-   
-   
+#moviesContainerSearch {
+  max-width: 100%;
+  margin: 0 auto;
 }
+#moviesContainerSearch .card-cont {
+  width: 25%;
+  margin-inline: 10px;
+}
+#moviesContainerSearch .card-text {
+  display: none;
+}
+.search-box {
+    opacity: 0;
+    width: 0%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transform: opacity 0.5s;
+  }
+  
+  .search-box.show {
+    opacity: 1;
+  }
+  .dropdown-menu {
+    background-color: #000000;
+  }
+  .dropdown-menu .dropdown-item {
+    color: #ffffff;
+  }

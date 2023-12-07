@@ -1,220 +1,372 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Netflix</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body class="bg-dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-dark">
+    <!--NavbarStart-->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid mx-4">
+          <a class="navbar-brand" href="#">
+            <img
+              src="./assets/Netflix_Logo_RGB.png"
+              alt="Netflix Logo"
+              width="100"
+            />
+          </a>
 
-<!--NavbarStart-->
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-      <div class="container-fluid mx-4">
-        <a class="navbar-brand" href="#">
-          <img src="./assets/Netflix_Logo_RGB.png" alt="Netflix Logo" width="100">
-        </a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">TV Shows</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Movies</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Recently Added</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">My List</a>
-            </li>
-          </ul>
-
-          <ul class="navbar-nav nav__right__side">
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <ion-icon name="search-sharp"></ion-icon>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                KIDS
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <ion-icon name="notifications-sharp"></ion-icon>
-              </a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="./assets/Hixy User Logo.png" alt="User Image" width="30" class="rounded-circle">
-              </a>
-              <ul class="dropdown-menu dropdown-menu-end bg-tertiary" aria-labelledby="userDropdown">
-                <li><a class="dropdown-item" href="#"><ion-icon name="person-circle-sharp"></ion-icon> Profile</a></li>
-                <li><a class="dropdown-item" href="#"> <ion-icon name="settings-sharp"></ion-icon> Account Settings</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#"> <ion-icon name="log-out-sharp"></ion-icon> Sign Out</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-<!--NavbarEnd-->
-
-<!--JumbotronStart-->
-<jumbotron>
-<div class="jumbotron mx-4">
-  <div class="container-fluid">
-    <div class="row align-items-center">
-      <div class="col-md-6">
-        <div class="d-flex flex-row align-items-center">
-          <h1 class="display-7">TV Shows</h1>          
-          <button class="btn jumbotron-btn dropdown-toggle ms-5 " type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Genres
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
           </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Drama</a></li>
-            <li><a class="dropdown-item" href="#">Crime</a></li>
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Fantasy</a></li>
-            <li><a class="dropdown-item" href="#">Biography</a></li>
-            <li><a class="dropdown-item" href="#">Western</a></li>
-            <li><a class="dropdown-item" href="#">Animation</a></li>
-            <li><a class="dropdown-item" href="#">Comedy</a></li>
-            <li><a class="dropdown-item" href="#">Sci-Fi</a></li>
-          </ul>        
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">TV Shows</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Movies</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Recently Added</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">My List</a>
+              </li>
+            </ul>
+
+            <ul class="navbar-nav nav__right__side">
+              <li class="nav-item">
+                <div id="searchBox" class="search-box">
+                  <input type="text" placeholder="Search..." />
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" id="searchIcon">
+                  <ion-icon name="search-sharp"></ion-icon>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"> KIDS </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <ion-icon name="notifications-sharp"></ion-icon>
+                </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="userDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img
+                    src="./assets/Hixy User Logo.png"
+                    alt="User Image"
+                    width="30"
+                    class="rounded-circle"
+                  />
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-end"
+                  aria-labelledby="userDropdown"
+                >
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      ><ion-icon name="person-circle-sharp"></ion-icon>
+                      Profile</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <ion-icon name="settings-sharp"></ion-icon> Account
+                      Settings</a
+                    >
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <ion-icon name="log-out-sharp"></ion-icon> Sign Out</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!--NavbarEnd-->
+
+    <!--JumbotronStart-->
+    <jumbotron>
+      <div class="jumbotron mx-4">
+        <div class="container-fluid">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <div class="d-flex flex-row align-items-center">
+                <h1 class="display-7">TV Shows</h1>
+                <button
+                  class="btn jumbotron-btn dropdown-toggle ms-5"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Genres
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      onclick="filterByGenre('Drama')"
+                      ><ion-icon name="caret-forward"></ion-icon> Drama</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      onclick="filterByGenre('Crime')"
+                      ><ion-icon name="caret-forward"></ion-icon> Crime</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      onclick="filterByGenre('Action')"
+                      ><ion-icon name="caret-forward"></ion-icon> Action</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      onclick="filterByGenre('Fantasy')"
+                      ><ion-icon name="caret-forward"></ion-icon> Fantasy</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      onclick="filterByGenre('Biography')"
+                      ><ion-icon name="caret-forward"></ion-icon> Biography</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      onclick="filterByGenre('Western')"
+                      ><ion-icon name="caret-forward"></ion-icon> Western</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      onclick="filterByGenre('Animation')"
+                      ><ion-icon name="caret-forward"></ion-icon> Animation</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      onclick="filterByGenre('Comedy')"
+                      ><ion-icon name="caret-forward"></ion-icon> Comedy</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      onclick="filterByGenre('Sci-Fi')"
+                      ><ion-icon name="caret-forward"></ion-icon> Sci-Fi</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6 text-md-end btn__div">
+              <button class=" btn-outline-light btn__edit1">
+                <ion-icon name="reorder-two-outline"></ion-icon>
+              </button>
+              <button class=" btn-outline-light btn__edit2">
+                <ion-icon name="grid-outline"></ion-icon>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="col-md-6 text-md-end">
-        <button class="btn btn-outline-light btn__edit"><ion-icon name="reorder-two-outline"></ion-icon></button>
-        <button class="btn btn-outline-light btn__edit"><ion-icon name="grid-outline"></ion-icon></button>
-      
+    </jumbotron>
+    <!--JumbotronEnd-->
+
+    <!--MoviesSearchByGenreStart-->
+    <div
+      class="d-flex justify-content-center my-5"
+      id="moviesContainerSearch"
+    ></div>
+    <!--MoviesSearchByGenreEnd-->
+
+    <!--CarouselsStart-->
+    <section class="container-fluid">
+      <h3 class="display-7 mt-5 mb-3">Trending Now</h3>
+      <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner"></div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carousel1"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carousel1"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-    </div>
-  </div>
-</div>
-</jumbotron>
-<!--JumbotronEnd-->
-
-<!--CarouselsStart-->
-<section class="container-fluid">
-<h3 class="display-7 mt-5 mb-3">Trending Now</h3>
-<div id="carousel1" class="carousel slide " data-bs-ride="carousel">
-  <div class="carousel-inner"></div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-<h3 class="display-7 mt-5 mb-3">Watch It Again</h3>
-<div id="carousel2" class="carousel slide " data-bs-ride="carousel">
-  <div class="carousel-inner"></div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carousel2" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carousel2" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-<h3 class="display-7 mt-5 mb-3">New Releases</h3>
-<div id="carousel3" class="carousel slide " data-bs-ride="carousel">
-  <div class="carousel-inner"></div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carousel3" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carousel3" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-</section>
-<!--CarouselsEnd-->
-
-
-<!--FooterStart-->
-<footer class="bg-dark text-white py-4 mt-5">
-  
-  <div class="container w-50">
-    
-      
-      <div class="mb-3 social__icons">
-        <ion-icon name="logo-facebook"></ion-icon>
-        <ion-icon name="logo-instagram"></ion-icon>
-        <ion-icon name="logo-twitter"></ion-icon>
-        <ion-icon name="logo-youtube"></ion-icon>
+      <h3 class="display-7 mt-5 mb-3">Watch It Again</h3>
+      <div id="carousel2" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner"></div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carousel2"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carousel2"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-      <div class="row ">
-      
-      <div class="col-md mb-2">
-        
+      <h3 class="display-7 mt-5 mb-3">New Releases</h3>
+      <div id="carousel3" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner"></div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carousel3"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carousel3"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+    <!--CarouselsEnd-->
+
+    <!--FooterStart-->
+    <footer class="bg-dark text-white py-4 mt-5">
+      <div class="container w-50">
+        <div class="mb-3 social__icons">
+          <a href="https://www.facebook.com/netflix/"><ion-icon name="logo-facebook"></ion-icon></a>
+          <a href="https://www.instagram.com/netflix/"><ion-icon name="logo-instagram"></ion-icon></a>
+          <a href="https://twitter.com/netflix"><ion-icon name="logo-twitter"></ion-icon></a>
+          <a href="https://www.youtube.com/@Netflix"><ion-icon name="logo-youtube"></ion-icon></a>
+        </div>
+        <div class="row">
+          <div class="col-md mb-2">
+            <ul class="list-unstyled">
+              <li>Audio and Subtitles</li>
+              <li>Media Center</li>
+              <li>Privacy</li>
+              <li>Contact Us</li>
+            </ul>
+          </div>
+
+          <div class="col-md mb-2">
+            <ul class="list-unstyled">
+              <li>Audio Description</li>
+              <li>Investor Relations</li>
+              <li>Legal Notices</li>
+            </ul>
+          </div>
+
+          <div class="col-md mb-2">
+            <ul class="list-unstyled">
+              <li>Help Center</li>
+              <li>Jobs</li>
+              <li>Cookie Preferences</li>
+            </ul>
+          </div>
+
+          <div class="col-md mb-2">
+            <ul class="list-unstyled">
+              <li>Gift Cards</li>
+              <li>Terms of Use</li>
+              <li>Corporate Information</li>
+            </ul>
+          </div>
+        </div>
         <ul class="list-unstyled">
-          <li>Audio and Subtitles</li>
-          <li>Media Center</li>
-          <li>Privacy</li>
-          <li>Contact Us</li>
+          <li><button class="btn btn-link">Service Code</button></li>
+          <li class="trademark__text">
+            Trademark 1997-2019 Netflix, Inc. {i-0d00fcda2fdf9c0de}
+          </li>
         </ul>
       </div>
+    </footer>
+    <!--FooterEnd-->
 
-      <div class="col-md mb-2">
-        
-        <ul class="list-unstyled">
-          <li>Audio Description</li>
-          <li>Investor Relations</li>
-          <li>Legal Notices</li>
-        </ul>
-      </div>
-
-      <div class="col-md mb-2">
-        
-        <ul class="list-unstyled">
-          <li>Help Center</li>
-          <li>Jobs</li>
-          <li>Cookie Preferences</li>
-        </ul>
-      </div>
-
-      <div class="col-md mb-2">
-        
-        <ul class="list-unstyled">
-          <li>Gift Cards</li>
-          <li>Terms of Use</li>
-          <li>Corporate Information</li>
-        </ul>
-      </div>
-    </div>
-    <ul class="list-unstyled">
-    <li><button class="btn btn-link">Service Code</button></li>
-    <li class="trademark__text">Trademark 1997-2019 Netflix, Inc. {i-0d00fcda2fdf9c0de}</li>
-  </ul>
-  </div>
-</footer>
-<!--FooterEnd-->
-
-  <script src="./script.js"></script>
-  <script src="https://unpkg.com/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
-</body>
+    <script src="./script.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>
