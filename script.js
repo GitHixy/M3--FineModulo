@@ -186,7 +186,7 @@ function populateCarousel(carouselId, movies) {
 
     for (let j = i; j < i + 6 && j < movies.length; j++) {
       const col = document.createElement("div");
-      col.className = "col-md-2";
+      col.className = "col-md-2 col-sm-4 col-xs-6";
 
       const card = createMovieCard(movies[j]);
 
@@ -275,12 +275,12 @@ function displayMovies(moviesToDisplay) {
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  const searchIcon = document.getElementById('searchIcon');
-  const searchBox = document.getElementById('searchBox');
+document.addEventListener("DOMContentLoaded", function () {
+  const searchIcon = document.getElementById("searchIcon");
+  const searchBox = document.getElementById("searchBox");
 
-  searchIcon.addEventListener('click', function () {
-    searchBox.classList.add('show');
+  searchIcon.addEventListener("click", function () {
+    searchBox.classList.add("show");
     searchBox.focus();
   });
 });

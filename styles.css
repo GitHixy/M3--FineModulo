@@ -18,8 +18,6 @@ footer li {
   color: #818181;
   margin-block: 15px;
 }
-footer {
-}
 footer li:hover {
   color: #ffffff;
 }
@@ -45,14 +43,15 @@ h3 {
   border: 1px solid #ffffff;
 }
 .btn__div {
-    display: flex;
-    justify-content: end;
+  display: flex;
+  flex-direction: row-reverse;
 }
-.btn__edit1, .btn__edit2 {
-    font-size: 20px;
-    color: #ffffff;
-    border: 1px solid #ffffff;
-    background-color: #212529;
+.btn__edit1,
+.btn__edit2 {
+  font-size: 20px;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  background-color: #212529;
 }
 .carousel-inner {
   overflow: visible;
@@ -69,6 +68,7 @@ h3 {
   transition: transform 0.5s;
 }
 .card {
+  border-radius: none;
   background-color: #000000;
   color: #ffffff;
   transition: transform 0.5s, opacity 0.5s, height 0.5s ease-in-out;
@@ -76,7 +76,6 @@ h3 {
   height: 0;
   position: absolute;
   top: 100%;
-  box-sizing: border-box;
   z-index: 0;
 }
 .img-cont {
@@ -88,9 +87,11 @@ h3 {
   width: 100%;
   transform: scale(1.05);
   z-index: 1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .card-cont:hover .img-cont {
   transform: scale(1.05);
+  box-shadow: 0 4px 8px rgb(0, 0, 0);
 }
 #moviesContainerSearch {
   max-width: 100%;
@@ -104,19 +105,18 @@ h3 {
   display: none;
 }
 .search-box {
-    opacity: 0;
-    width: 0%;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transform: opacity 0.5s;
-  }
-  
-  .search-box.show {
-    opacity: 1;
-  }
-  .dropdown-menu {
-    background-color: #000000;
-  }
-  .dropdown-menu .dropdown-item {
-    color: #ffffff;
-  }
+  opacity: 0;
+  width: 0%;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transform: opacity 0.5s;
+}
+.search-box.show {
+  opacity: 1;
+}
+.dropdown-menu {
+  background-color: #000000;
+}
+.dropdown-menu .dropdown-item {
+  color: #ffffff;
+}
